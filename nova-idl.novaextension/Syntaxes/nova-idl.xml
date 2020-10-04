@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="idl">
+    <meta>
+        <name>IDL</name>
+        <type>script</type>
+        <preferred-file-extension>pro</preferred-file-extension>
+    </meta>
+    
+    <detectors>
+        <extension priority="1.0">pro</extension>
+    </detectors>
+    
+    <indentation>
+        <increase>
+            <expression>(^\s*(pro|function)\b.*)|(^.*\bbegin\b)</expression>
+        </increase>
+        <decrease>
+            <expression>(^\s*(else|end|endif|endelse|endcase|endswitch|endfor|endwhile|endrep|endforeach|)\b)|(.*[,\s]\$(\s*;.*)?$)</expression>
+        </decrease>
+    </indentation>
+    
+    <comments>
+        <single>
+            <expression>;</expression>
+        </single>
+    </comments>
+    
+    <brackets>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+    </brackets>
+    
+    <surrounding-pairs>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&apos;" close="&apos;" />
+        <pair open="&quot;" close="&quot;" />
+    </surrounding-pairs>
+    
+    <scopes>
+        <include syntax="self" collection="comments"/>
+        <include syntax="self" collection="keywords" />
+        <include syntax="self" collection="values" />
+    </scopes>
+    
+    <collections>
+        <collection name="comments">
+            <scope name="idl.comment.single" spell-check="true">
+                <expression>;(.*)$</expression>
+                <capture number="1" name="idl.comment.content" />
+            </scope>
+        </collection>
+
+        <collection name="keywords">
+            <scope name="idl.keyword">
+                <strings>
+                    <string>and</string>
+                    <string>begin</string>
+                    <string>break</string>
+                    <string>case</string>
+                    <string>compile_opt</string>
+                    <string>continue</string>
+                    <string>else</string>
+                    <string>end</string>
+                    <string>endcase</string>
+                    <string>endelse</string>
+                    <string>endfor</string>
+                    <string>endforeach</string>
+                    <string>endif</string>
+                    <string>endrep</string>
+                    <string>endswitch</string>
+                    <string>endwhile</string>
+                    <string>eq</string>
+                    <string>ge</string>
+                    <string>goto</string>
+                    <string>gt</string>
+                    <string>for</string>
+                    <string>foreach</string>
+                    <string>function</string>
+                    <string>if</string>
+                    <string>le</string>
+                    <string>lt</string>
+                    <string>mod</string>
+                    <string>ne</string>
+                    <string>or</string>
+                    <string>pro</string>
+                    <string>repeat</string>
+                    <string>then</string>
+                    <string>until</string>
+                    <string>while</string>
+                </strings>
+            </scope>
+        </collection>
+
+        <collection name="values">
+            <include syntax="self" collection="strings" />
+
+            <scope name="idl.value.system_variable">
+            </scope>
+
+            <scope name="idl.value.number.hex">
+            </scope>
+
+            <scope name="idl.value.number.octal">
+            </scope>
+
+            <scope name="idl.value.number">
+            </scope>
+
+            <scope name="idl.value.array">
+            </scope>
+
+            <scope name="idl.value.structure">
+            </scope>
+        </collection>
+
+        <collection name="strings">
+            <scope name="idl.string.double-quoted">
+                <starts-with>
+                    <expression>&quot;</expression>
+                    <capture number="0" name="idl.string.double-quoted.delimiter" />
+                </starts-with>
+                <ends-with>
+                    <expression>&quot;</expression>
+                    <capture number="0" name="idl.string.double-quoted.delimiter" />
+                </ends-with>
+                <subscopes>
+                    <scope name="idl.string.double-quoted.escape">
+                        <expression>\\(?:\\|&quot;|n|r|t|b|f)</expression>
+                    </scope>
+                </subscopes>
+            </scope>
+
+            <scope name="idl.string.single-quoted">
+                <starts-with>
+                    <expression>&apos;</expression>
+                    <capture number="1" name="idl.string.single-quoted.prefix" />
+                    <capture number="2" name="idl.string.single-quoted.delimiter" />
+                </starts-with>
+                <ends-with>
+                    <expression>&apos;</expression>
+                    <capture number="0" name="idl.string.single-quoted.delimiter" />
+                </ends-with>
+                <subscopes>
+                    <scope name="idl.string.single-quoted.escape">
+                        <expression>\\(?:\\|&apos;|n|r|t|b|f)</expression>
+                    </scope>
+                </subscopes>
+            </scope>
+        </collection>
+    </collections>
+</syntax>

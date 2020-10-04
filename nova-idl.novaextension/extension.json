@@ -1,0 +1,11 @@
+{
+    "identifier": "com.michaelgalloy.novaidl",
+    "name": "nova-idl",
+    "organization": "michaelgalloy.com",
+    "description": "Simple language definition for the Interactive Data Language (IDL)",
+    "version": "1.0",
+    "license":"BSD 3-Clause",
+    "categories": ["languages"],
+    "repository": "https://github.com/mgalloy/nova-idl",
+    "homepage": "https://github.com/mgalloy/nova-idl"
+}

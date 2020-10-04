@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<completions>
+    <provider>
+        <selector>idl</selector>
+        <expression>\b[a-zA-Z0-9-_]*</expression>
+
+        <symbols type="function">
+            <behavior>
+                <arguments prefix="(" suffix=")" separator=", " />
+            </behavior>
+        </symbols>
+
+        <symbols type="procedure">
+            <behavior>
+                <arguments prefix="," suffix="" separator=", " />
+            </behavior>
+        </symbols>
+
+        <set>idl.entities</set>
+        <set>idl.functions.core</set>
+        <set>idl.procedures.core</set>
+    </provider>
+
+    <set name="idl.entities">
+        <completion string="&quot;" />
+        <completion string="&amp;" />
+        <completion string="&apos;" />
+        <completion string="&lt;" />
+        <completion string="&gt;" />
+    </set>
+
+    <set name="idl.functions.core" symbol="function">
+        <behavior>
+            <append>($[x])</append>
+        </behavior>
+        
+        <completion string="abs" />
+    </set>
+    <set name="idl.procedures.core" symbol="procedure">
+        <behavior>
+            <append>, $[x]</append>
+        </behavior>
+        
+        <completion string="print" />
+    </set>
+</completions>
