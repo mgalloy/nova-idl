@@ -60,6 +60,7 @@
                     <string>begin</string>
                     <string>break</string>
                     <string>case</string>
+                    <string>common</string>
                     <string>compile_opt</string>
                     <string>continue</string>
                     <string>else</string>
@@ -73,12 +74,13 @@
                     <string>endswitch</string>
                     <string>endwhile</string>
                     <string>eq</string>
-                    <string>ge</string>
-                    <string>goto</string>
-                    <string>gt</string>
+                    <string>forward_function</string>
                     <string>for</string>
                     <string>foreach</string>
                     <string>function</string>
+                    <string>ge</string>
+                    <string>goto</string>
+                    <string>gt</string>
                     <string>if</string>
                     <string>le</string>
                     <string>lt</string>
