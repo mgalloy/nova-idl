@@ -3,7 +3,7 @@
     <provider name="identifier">
         <syntax>idl</syntax>
         <selector>*:not(string,comment)</selector>
-        <expression>\b[a-zA-Z0-9-_]*</expression>
+        <expression>\b[a-zA-Z0-9-_$]*</expression>
 
         <symbols type="function">
             <behavior>
@@ -11,7 +11,7 @@
             </behavior>
         </symbols>
 
-        <symbols type="procedure">
+        <symbols type="function">
             <behavior>
                 <arguments prefix="," suffix="" separator=", " />
             </behavior>
@@ -24,9 +24,18 @@
         </symbols>
 
         <set>idl.entities</set>
+        <set>idl.reservedwords</set>
         <set>idl.functions.core</set>
         <set>idl.procedures.core</set>
         <set>idl.classes.core</set>
+    </provider>
+
+    <provider name="systemvariables">
+        <syntax>idl</syntax>
+        <selector>*:not(string,comment)</selector>
+        <expression>\b\![a-zA-Z0-9-_$]*</expression>
+
+        <set>idl.systemvariables</set>
     </provider>
 
     <set name="idl.entities">
@@ -37,6 +46,56 @@
         <completion string="&gt;" />
     </set>
 
+    <set name="idl.reservedwords" symbol="statement">
+        <completion string="and">
+            <behavior>
+                <append> $[expression]</append>
+            </behavior>
+        </completion>
+        <completion string="begin" />
+    </set>
+
+    <set name="idl.systemvariables" symbol="variable" case-insensitive="true">
+        <completion string="c" />
+        <completion string="color" />
+        <completion string="const" />
+        <completion string="cpu" />
+        <completion string="d" />
+        <completion string="dir" />
+        <completion string="dlm_path" />
+        <completion string="dpi" />
+        <completion string="dtor" />
+        <completion string="edit_input" />
+        <completion string="err" />
+        <completion string="error_state" />
+        <completion string="except" />
+        <completion string="false" />
+        <completion string="help_path" />
+        <completion string="journal" />
+        <completion string="make_dll" />
+        <completion string="map" />
+        <completion string="more" />
+        <completion string="mouse" />
+        <completion string="msg_prefix" />
+        <completion string="null" />
+        <completion string="order" />
+        <completion string="p" />
+        <completion string="path" />
+        <completion string="pi" />
+        <completion string="prompt" />
+        <completion string="quiet" />
+        <completion string="radeg" />
+        <completion string="syserror" />
+        <completion string="syserr_string" />
+        <completion string="true" />
+        <completion string="values" />
+        <completion string="version" />
+        <completion string="warn" />
+        <completion string="x" />
+        <completion string="y" />
+        <completion string="z" />
+    </set>
+        
     <set name="idl.functions.core" symbol="function" case-insensitive="true">
         <behavior>
             <append>($[x])</append>
@@ -644,6 +703,7 @@
         <completion string="idl_base64" />
         <completion string="idl_primitive" />
         <completion string="idl_validname" />
+        <completion string="idldehydrate" />
         <completion string="idlexbr_assistant" />
         <completion string="idlitsys_createtool" />
         <completion string="idlunit" />
@@ -1064,7 +1124,7 @@
         <completion string="zlib_uncompress" />
     </set>
 
-    <set name="idl.procedures.core" symbol="procedure" case-insensitive="true">
+    <set name="idl.procedures.core" symbol="function" case-insensitive="true">
         <behavior>
             <append>, $[x]</append>
         </behavior>
@@ -1534,5 +1594,127 @@
         </behavior>
 
         <completion string="IDL_Container" />
+        <completion string="IDL_IDLBridge" />
+        <completion string="IDL_Integer" />
+        <completion string="IDL_Object" />
+        <completion string="IDL_Number" />
+        <completion string="IDL_Pointer" />
+        <completion string="IDL_Savefile" />
+        <completion string="IDL_String" />
+        <completion string="IDLanROI" />
+        <completion string="IDLanROIGroup" />
+        <completion string="IDLcomIDispatch" />
+        <completion string="IDLdbDatabase" />
+        <completion string="IDLdbRecordset" />
+        <completion string="IDLffDICOM" />
+        <completion string="IDLffDicomEx" />
+        <completion string="IDLffDicomExCfg" />
+        <completion string="IDLffDicomQuery" />
+        <completion string="IDLffDicomStorScu" />
+        <completion string="IDLffDXF" />
+        <completion string="IDLffJPEG2000" />
+        <completion string="IDLffLangCat" />
+        <completion string="IDLffMJPEG2000" />
+        <completion string="IDLffMrSID" />
+        <completion string="IDLffShape" />
+        <completion string="IDLffVideoRead" />
+        <completion string="IDLffVideoWrite" />
+        <completion string="IDLffXMLDOMAttr" />
+        <completion string="IDLffXMLDOMCDATASection" />
+        <completion string="IDLffXMLDOMCharacterData" />
+        <completion string="IDLffXMLDOMComment" />
+        <completion string="IDLffXMLDOMDocument" />
+        <completion string="IDLffXMLDOMDocumentFragment" />
+        <completion string="IDLffXMLDOMDocumentType" />
+        <completion string="IDLffXMLDOMElement" />
+        <completion string="IDLffXMLDOMEntity" />
+        <completion string="IDLffXMLDOMEntityReference" />
+        <completion string="IDLffXMLDOMNamedNodeMap" />
+        <completion string="IDLffXMLDOMNode" />
+        <completion string="IDLffXMLDOMNodeIterator" />
+        <completion string="IDLffXMLDOMNodeList" />
+        <completion string="IDLffXMLDOMNotation" />
+        <completion string="IDLffXMLDOMProcessingInstruction" />
+        <completion string="IDLffXMLDOMText" />
+        <completion string="IDLffXMLDOMTreeWalker" />
+        <completion string="IDLffXMLSAX" />
+        <completion string="IDLgrAxis" />
+        <completion string="IDLgrBuffer" />
+        <completion string="IDLgrClipboard" />
+        <completion string="IDLgrColorbar" />
+        <completion string="IDLgrContour" />
+        <completion string="IDLgrFilterChain" />
+        <completion string="IDLgrFont" />
+        <completion string="IDLgrImage" />
+        <completion string="IDLgrLegend" />
+        <completion string="IDLgrLight" />
+        <completion string="IDLgrModel" />
+        <completion string="IDLgrPalette" />
+        <completion string="IDLgrPattern" />
+        <completion string="IDLgrPDF" />
+        <completion string="IDLgrPlot" />
+        <completion string="IDLgrPolygon" />
+        <completion string="IDLgrPolyline" />
+        <completion string="IDLgrPrinter" />
+        <completion string="IDLgrROI" />
+        <completion string="IDLgrROIGroup" />
+        <completion string="IDLgrScene" />
+        <completion string="IDLgrShader" />
+        <completion string="IDLgrShaderBytscl" />
+        <completion string="IDLgrShaderConvol3" />
+        <completion string="IDLgrSurface" />
+        <completion string="IDLgrSymbol" />
+        <completion string="IDLgrTessellator" />
+        <completion string="IDLgrText" />
+        <completion string="IDLgrTextEdit" />
+        <completion string="IDLgrView" />
+        <completion string="IDLgrViewgroup" />
+        <completion string="IDLgrVolume" />
+        <completion string="IDLgrVRML" />
+        <completion string="IDLgrWindow" />
+        <completion string="IDLitComponent" />
+        <completion string="IDLitWindow" />
+        <completion string="IDLjavaObject" />
+        <completion string="IDLnetJPIP" />
+        <completion string="IDLnetOGCWCS" />
+        <completion string="IDLnetOGSWMS" />
+        <completion string="IDLnetURL" />
+        <completion string="IDLParameterBoolean" />
+        <completion string="IDLParameterBooleanArray" />
+        <completion string="IDLParameterByte" />
+        <completion string="IDLParameterByteArray" />
+        <completion string="IDLParameterComplex" />
+        <completion string="IDLParameterComplexArray" />
+        <completion string="IDLParameterDComplex" />
+        <completion string="IDLParameterDComplexArray" />
+        <completion string="IDLParameterDictionary" />
+        <completion string="IDLParameterDouble" />
+        <completion string="IDLParameterDoubleArray" />
+        <completion string="IDLParameterFloat" />
+        <completion string="IDLParameterFloatArray" />
+        <completion string="IDLParameterHash" />
+        <completion string="IDLParameterIDLTaskInfo" />
+        <completion string="IDLParameterInt" />
+        <completion string="IDLParameterIntArray" />
+        <completion string="IDLParameterList" />
+        <completion string="IDLParameterLong" />
+        <completion string="IDLParameterLong64" />
+        <completion string="IDLParameterLong64Array" />
+        <completion string="IDLParameterLongArray" />
+        <completion string="IDLParameterOrderedHash" />
+        <completion string="IDLParameterPrimitive" />
+        <completion string="IDLParameterString" />
+        <completion string="IDLParameterStringArray" />
+        <completion string="IDLParameterUint" />
+        <completion string="IDLParameterUintArray" />
+        <completion string="IDLParameterUlong" />
+        <completion string="IDLParameterUlong64" />
+        <completion string="IDLParameterUlong64Array" />
+        <completion string="IDLParameterUlongArray" />
+        <completion string="IDLParameter" />
+        <completion string="IDLParameter" />
+        <completion string="IDLParameter" />
+        <completion string="IDLTask" />
+        <completion string="IDLTaskFromProcedure" />
     </set>
 </completions>
