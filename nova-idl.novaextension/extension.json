@@ -7,5 +7,8 @@
     "license":"BSD 3-Clause",
     "categories": ["languages"],
     "repository": "https://github.com/mgalloy/nova-idl",
-    "homepage": "https://github.com/mgalloy/nova-idl"
+    "homepage": "https://github.com/mgalloy/nova-idl",
+    "bugs": {
+        "url": "https://github.com/mgalloy/nova-idl/issues"
+    }
 }
