@@ -47,6 +47,10 @@
     
     <collections>
         <collection name="comments">
+            <!-- <scope name="idl.todo" spell-check="true">
+                <expression>; TODO: (.*)$</expression>
+                <capture number="1" name="idl.todo" />
+            </scope> -->
             <scope name="idl.comment.single" spell-check="true">
                 <expression>;(.*)$</expression>
                 <capture number="1" name="idl.comment.content" />

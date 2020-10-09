@@ -1,6 +1,6 @@
 {
     "identifier": "com.michaelgalloy.novaidl",
-    "name": "nova-idl",
+    "name": "IDL",
     "organization": "michaelgalloy.com",
     "description": "Simple language definition for the Interactive Data Language (IDL)",
     "version": "1.0",

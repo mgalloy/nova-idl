@@ -30,13 +30,13 @@
         <set>idl.classes.core</set>
     </provider>
 
-    <provider name="systemvariables">
+    <!-- <provider name="systemvariables">
         <syntax>idl</syntax>
         <selector>*:not(string,comment)</selector>
         <expression>\b\![a-zA-Z0-9-_$]*</expression>
 
         <set>idl.systemvariables</set>
-    </provider>
+    </provider> -->
 
     <set name="idl.entities">
         <completion string="&quot;" />
@@ -55,7 +55,7 @@
         <completion string="begin" />
     </set>
 
-    <set name="idl.systemvariables" symbol="variable" case-insensitive="true">
+    <!-- <set name="idl.systemvariables" symbol="variable" case-insensitive="true">
         <completion string="c" />
         <completion string="color" />
         <completion string="const" />
@@ -94,8 +94,8 @@
         <completion string="x" />
         <completion string="y" />
         <completion string="z" />
-    </set>
-        
+    </set> -->
+
     <set name="idl.functions.core" symbol="function" case-insensitive="true">
         <behavior>
             <append>($[x])</append>
