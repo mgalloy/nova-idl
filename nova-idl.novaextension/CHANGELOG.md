@@ -1,4 +1,4 @@
-## Version 0.1
+## Version 0.1 [09 Oct 2020]
 
 Initial release with:
 - Basic completion on library routine names
