@@ -103,7 +103,7 @@
         <collection name="values">
             <include syntax="self" collection="strings" />
 
-            <scope name="idl.value.system_variable">
+            <!-- <scope name="idl.value.system_variable">
             </scope>
 
             <scope name="idl.value.number.hex">
@@ -119,7 +119,7 @@
             </scope>
 
             <scope name="idl.value.structure">
-            </scope>
+            </scope> -->
         </collection>
 
         <collection name="strings">
