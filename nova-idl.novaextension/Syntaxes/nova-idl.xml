@@ -67,6 +67,7 @@
                     <string>common</string>
                     <string>compile_opt</string>
                     <string>continue</string>
+                    <string>do</string>
                     <string>else</string>
                     <string>end</string>
                     <string>endcase</string>

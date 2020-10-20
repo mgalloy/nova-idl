@@ -53,6 +53,41 @@
             </behavior>
         </completion>
         <completion string="begin" />
+        <completion string="break"></completion>
+        <completion string="case"></completion>
+        <completion string="common"></completion>
+        <completion string="compile_opt"></completion>
+        <completion string="continue"></completion>
+        <completion string="do"></completion>
+        <completion string="else"></completion>
+        <completion string="end"></completion>
+        <completion string="endcase"></completion>
+        <completion string="endelse"></completion>
+        <completion string="endfor"></completion>
+        <completion string="endforeach"></completion>
+        <completion string="endif"></completion>
+        <completion string="endrep"></completion>
+        <completion string="endswitch"></completion>
+        <completion string="endwhile"></completion>
+        <completion string="eq"></completion>
+        <completion string="forward_function"></completion>
+        <completion string="for"></completion>
+        <completion string="foreach"></completion>
+        <completion string="function"></completion>
+        <completion string="ge"></completion>
+        <completion string="goto"></completion>
+        <completion string="gt"></completion>
+        <completion string="if"></completion>
+        <completion string="le"></completion>
+        <completion string="lt"></completion>
+        <completion string="mod"></completion>
+        <completion string="ne"></completion>
+        <completion string="or"></completion>
+        <completion string="pro"></completion>
+        <completion string="repeat"></completion>
+        <completion string="then"></completion>
+        <completion string="until"></completion>
+        <completion string="while"></completion>
     </set>
 
     <!-- <set name="idl.systemvariables" symbol="variable" case-insensitive="true">
