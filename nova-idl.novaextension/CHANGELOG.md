@@ -5,3 +5,6 @@ Initial release with:
 - Basic syntax highlighting of reserved words, strings, and comments
 - Proper indentation of next line
 
+
+## Version 0.2
+- Added language keywords to completions.
