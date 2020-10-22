@@ -8,3 +8,4 @@ Initial release with:
 
 ## Version 0.2
 - Added language keywords to completions.
+- Adding numeric values

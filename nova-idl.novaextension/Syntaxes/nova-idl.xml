@@ -113,14 +113,37 @@
             <scope name="idl.value.number.octal">
             </scope>
 
+            <scope name="idl.value.structure">
+            </scope> -->
+
             <scope name="idl.value.number">
+                <expression>(\b(\-|\+))?(((?&lt;!\w|\))\.\d+)|(\b(\d+_)*\d+(\.\d*)?))(l|L|d|D|s|S|us|US|ul|UL|ll|LL|ull|ULL|b|B)?\b</expression>
             </scope>
 
             <scope name="idl.value.array">
+                <symbol type="expression">
+                    <context behavior="subtree" />
+                </symbol>
+                <starts-with>
+                    <expression>\[</expression>
+                    <capture number="0" name="idl.bracket" />
+                </starts-with>
+                <ends-with>
+                    <expression>\]</expression>
+                    <capture number="0" name="idl.bracket" />
+                </ends-with>
+                <subscopes>
+                    <cut-off>
+                        <!-- Use a hint to stop parsing if the scope encounters a reserved word -->
+                        <!-- if and for are not included because of comprehensions -->
+                        <expression>(?=\b(?:else|if|for|while|pro|function)\b)</expression>
+                    </cut-off>
+                    <include syntax="self" collection="comments" />
+                    <include syntax="self" collection="values" />
+                    <!-- <include syntax="self" collection="identifiers" />
+                    <include syntax="self" collection="syntax" /> -->
+                </subscopes>
             </scope>
-
-            <scope name="idl.value.structure">
-            </scope> -->
         </collection>
 
         <collection name="strings">
