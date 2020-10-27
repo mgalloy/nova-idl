@@ -105,19 +105,29 @@
             <include syntax="self" collection="strings" />
 
             <!-- <scope name="idl.value.system_variable">
-            </scope>
-
-            <scope name="idl.value.number.hex">
-            </scope>
-
-            <scope name="idl.value.number.octal">
-            </scope>
-
-            <scope name="idl.value.structure">
             </scope> -->
 
-            <scope name="idl.value.number">
-                <expression>(\b(\-|\+))?(((?&lt;!\w|\))\.\d+)|(\b(\d+_)*\d+(\.\d*)?))(l|L|d|D|s|S|us|US|ul|UL|ll|LL|ull|ULL|b|B)?\b</expression>
+            <!-- <scope name="idl.value.number.binary">
+                <expression>&quot;[01]+&quot;x</expression>
+            </scope> -->
+
+            <!-- <scope name="idl.value.number.hex">
+                <expression>&quot;[a-fA-F0-9]+&quot;x</expression>
+            </scope> -->
+
+            <!-- <scope name="idl.value.number.octal">
+                <expression>&quot;[0-7]+&quot;o</expression>
+            </scope> -->
+
+            <!-- <scope name="idl.value.structure">
+            </scope> -->
+
+            <scope name="idl.value.number.float">
+                <expression>\b(\d+|\d+\.\d*|\.\d+)([eEdD][-+]?)?\d*\b</expression>
+            </scope>
+
+            <scope name="idl.value.number.int">
+                <expression>(?&lt;!\w|\))\b\d+(l|L|s|S|us|US|ul|UL|ll|LL|ull|ULL|b|B)?\b</expression>
             </scope>
 
             <scope name="idl.value.array">
