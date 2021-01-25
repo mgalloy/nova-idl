@@ -9,3 +9,6 @@ Initial release with:
 ## Version 0.2
 - Added language keywords to completions.
 - Adding numeric values
+
+## Version 0.2.1
+- Minor issue which caused extenion to not work with Nova 4
